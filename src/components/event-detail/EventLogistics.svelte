@@ -17,7 +17,7 @@
 
 <section class={'logistics'}>
 	<div class={'image'}>
-		<img src={`/${image}`} alt={imageAlt} />
+		<img src={image} alt={imageAlt} />
 	</div>
 	<ul class={'list'}>
 		<LogisticsItem>

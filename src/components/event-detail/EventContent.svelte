@@ -1,5 +1,5 @@
 <section class={'content'}>
-	<slug />
+	<slot />
 </section>
 
 <style>
