@@ -1,8 +1,10 @@
 <script lang="ts">
 	import EventsList from '../components/EventsList.svelte';
-	import { getFeaturedEvents } from '../dummy-data';
+	import type { PageData } from './$types';
 
-	const events = getFeaturedEvents();
+	export let data: PageData;
+
+	const events = data.featuredEvents;
 </script>
 
 <EventsList items={events} />

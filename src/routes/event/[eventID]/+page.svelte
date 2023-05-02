@@ -2,24 +2,23 @@
 	import EventContent from '../../../components/event-detail/EventContent.svelte';
 	import EventLogistics from '../../../components/event-detail/EventLogistics.svelte';
 	import EventSummary from '../../../components/event-detail/EventSummary.svelte';
-	import { getEventById } from '../../../dummy-data';
-	import { page } from '$app/stores';
 	import ErrorAlert from '../../../components/ErrorAlert.svelte';
 
-	const eventId = $page.params.eventID;
-	const event = getEventById(eventId);
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
-{#if event}
-	<EventSummary title={event.title} />
+{#if data.event}
+	<EventSummary title={data.event.title} />
 	<EventLogistics
-		date={event.date}
-		address={event.location}
-		image={event.image}
-		imageAlt={event.title}
+		date={data.event.date}
+		address={data.event.location}
+		image={data.event.image}
+		imageAlt={data.event.title}
 	/>
 	<EventContent>
-		<p>{event.description}</p>
+		<p>{data.event.description}</p>
 	</EventContent>
 {:else}
 	<ErrorAlert>

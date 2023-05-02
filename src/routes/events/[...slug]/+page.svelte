@@ -2,28 +2,25 @@
 	import { page } from '$app/stores';
 	import Button from '../../../components/Button.svelte';
 	import ErrorAlert from '../../../components/ErrorAlert.svelte';
-	import { getFilteredEvents } from '../../../dummy-data';
 	import ResultsTitle from '../../../components/ResultsTitle.svelte';
 	import EventsList from '../../../components/EventsList.svelte';
 
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
 	const filteredData = $page.params.slug.split('/');
 
-	const numYear = +filteredData[0];
-	const numMonth = +filteredData[1];
+	const filteredEvents = data.filteredEvents;
 
-	const filteredEvents = getFilteredEvents({
-		year: numYear,
-		month: numMonth
-	});
-
-	const date = new Date(numYear, numMonth - 1);
+	const date = data.date;
 </script>
 
 {#if !filteredData}
 	<p class="center">Loading...</p>
 {/if}
 
-{#if isNaN(numYear) || isNaN(numMonth) || numYear > 2030 || numYear < 2021 || numMonth > 12}
+{#if data.error}
 	<ErrorAlert>
 		<p>This is not a valid filter!</p>
 	</ErrorAlert>
