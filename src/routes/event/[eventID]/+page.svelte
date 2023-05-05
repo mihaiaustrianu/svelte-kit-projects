@@ -5,6 +5,7 @@
 	import ErrorAlert from '../../../components/ErrorAlert.svelte';
 
 	import type { PageData } from './$types';
+	import Comments from '../../../components/comments/Comments.svelte';
 
 	export let data: PageData;
 </script>
@@ -20,6 +21,7 @@
 	<EventContent>
 		<p>{data.event.description}</p>
 	</EventContent>
+	<Comments eventID={data.event.id} />
 {:else}
 	<ErrorAlert>
 		<p>No event found</p>
