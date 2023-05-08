@@ -7,6 +7,6 @@
 
 <ul>
 	{#each posts as post}
-		<PostItem />
+		<PostItem {post} />
 	{/each}
 </ul>

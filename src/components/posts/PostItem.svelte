@@ -1,13 +1,7 @@
 <script lang="ts">
 	import type { Post } from '../../types/PostsInterface';
 
-	export const post: Post = {
-		title: 'Default Post',
-		image: '/images/posts/default',
-		excerpt: 'This is the default excerpt',
-		date: new Date(),
-		slug: '/posts/default-post'
-	};
+	export let post: Post;
 	const { title, image, excerpt, date, slug } = post;
 
 	const imagePath = `/images/posts/${slug}/${image}`;
@@ -17,10 +11,12 @@
 		month: 'long',
 		year: 'numeric'
 	});
+
+	const linkPath = `/posts/${slug}`;
 </script>
 
 <li class={'post'}>
-	<a href="/">
+	<a href={linkPath}>
 		<div class={'image'}>
 			<img src={imagePath} alt={title} width={300} height={200} />
 		</div>

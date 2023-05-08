@@ -1,6 +1,11 @@
 <section class={'hero'}>
 	<div class={'image'}>
-		<img src="/images/site/webDev.jpg" alt="This is showing the author" width="300" height="300" />
+		<img
+			src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2372&q=80"
+			alt="This is showing the author"
+			width="300"
+			height="300"
+		/>
 	</div>
 	<h1>Hi, I'm Mihai !</h1>
 	<p>This is my personal blog where I document all my personal projects!</p>

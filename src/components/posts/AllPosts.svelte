@@ -1,32 +1,29 @@
 <script lang="ts">
 	import type { Post } from '../../types/PostsInterface';
-
+	import PostsGrid from './PostsGrid.svelte';
 	export let posts: Post[];
-	import PostsGrid from '../posts/PostsGrid.svelte';
 </script>
 
-<section class="latest">
-	<section class={'latest'}>
-		<h2>Featured Posts</h2>
-		<PostsGrid {posts} />
-	</section>
+<section class={'posts'}>
+	<h1>All posts</h1>
+	<PostsGrid {posts} />
 </section>
 
 <style>
-	.latest {
+	.posts {
 		width: 90%;
-		max-width: 80rem;
+		max-width: 60rem;
 		margin: var(--size-8) auto;
 	}
 
-	.latest h2 {
+	.posts h1 {
 		font-size: var(--size-8);
 		color: var(--color-grey-800);
 		text-align: center;
 	}
 
 	@media (min-width: 768px) {
-		.latest h2 {
+		.posts h1 {
 			font-size: var(--size-16);
 		}
 	}
