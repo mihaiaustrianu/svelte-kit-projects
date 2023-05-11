@@ -29,15 +29,15 @@
 
 	.header img {
 		object-fit: cover;
-		width: 200px;
-		height: 120px;
+		width: 300px;
+		height: 200px;
 	}
 
 	@media (min-width: 768px) {
 		.header {
 			margin: var(--size-8) 0;
 			flex-direction: row;
-			align-items: flex-end;
+			align-items: center;
 		}
 
 		.header h1 {

@@ -18,7 +18,7 @@
 <li class={'post'}>
 	<a href={linkPath}>
 		<div class={'image'}>
-			<img src={imagePath} alt={title} width={300} height={200} />
+			<img src={imagePath} alt={title} height={200} />
 		</div>
 		<div class={'content'}>
 			<h3>{title}</h3>
@@ -40,13 +40,14 @@
 	}
 
 	.image {
-		width: 100%;
+		width: auto;
 		max-height: 20rem;
 		overflow: hidden;
 	}
 
 	.image img {
 		object-fit: cover;
+		width: 100%;
 	}
 
 	.content {
