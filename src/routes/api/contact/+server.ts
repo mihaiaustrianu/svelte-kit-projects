@@ -1,6 +1,7 @@
 import { error, json, type RequestHandler } from '@sveltejs/kit';
 import { MongoClient, ObjectId } from 'mongodb';
 import type Message from '../../../models/message';
+import { SECRET_MONGODB_PASSWORD, SECRET_MONGODB_USERNAME } from '$env/static/private';
 
 export const POST: RequestHandler = async ({ request }) => {
 	let { email, name, message } = await request.json();
@@ -18,7 +19,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	try {
 		client = await MongoClient.connect(
-			'mongodb+srv://nedec:cssmJWCd0ohB2rmb@footyfind.et59ckj.mongodb.net/?retryWrites=true&w=majority'
+			`mongodb+srv://${SECRET_MONGODB_USERNAME}:${SECRET_MONGODB_PASSWORD}@footyfind.et59ckj.mongodb.net/?retryWrites=true&w=majority`
 		);
 	} catch {
 		throw error(500, 'Connecting to the database failed');
