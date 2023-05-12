@@ -1,8 +1,9 @@
 import * as mongoDB from 'mongodb';
+import { SECRET_MONGODB_PASSWORD, SECRET_MONGODB_USERNAME } from '$env/static/private';
 
 export async function connectDatabase() {
 	const client = await mongoDB.MongoClient.connect(
-		'mongodb+srv://nedec:hntE2wprVhWeFnMT@footyfind.et59ckj.mongodb.net/events?retryWrites=true&w=majority'
+		`mongodb+srv://${SECRET_MONGODB_USERNAME}:${SECRET_MONGODB_PASSWORD}@footyfind.et59ckj.mongodb.net/events?retryWrites=true&w=majority`
 	);
 	return client;
 }
